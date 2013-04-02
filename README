@@ -1,0 +1,31 @@
+Cloud_MyYouTube
+===============
+
+First your should copy your own "AwsCredentials.properties" in to /src/
+
+Run as cloud server for the first time (no existing application created in Amazon Elastic Beanstalk Application)
+	1. Right click on your .jsp file
+	2. Run As -> Run on Server
+	3. Mutually define a new server: In "Amazon Web Services" folder, choose "AWS Elastic Beanstalk for Tomcat 6". Then click "next".
+	4. Region: "US East"; Input application name and the environment name (e.g. HelloWorld), Click "Next".
+	5. Choose a key or create a new key by "+" icon. Then click "finish".
+	6. It will take a while.
+
+Run as cloud server for second time:
+	1. Right click on your .jsp file
+	2. Run As -> Run on Server
+	3. Choose an existing server
+	
+Run as local server:
+	1. create local Tomcat server.
+	2. run on that server.
+
+Project Detail:
+To call servlet in jsp: 
+	1) create Java class extends HttpServlet; 
+	2) register in WebContent/WEB-INF/web.xml; 
+	3) call as action;
+
+UploadServlet.java deals with uploading videos into Amazon S3.
+RDSManager.java applies JDBC to access RDS MySQL Database.
+UpdateRate.java update rate for each video.
