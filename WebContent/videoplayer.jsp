@@ -5,7 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type='text/javascript' src='https://d290w3p5o590mj.cloudfront.net/jwplayer.js'></script>
-
 <title>Video Player</title>
 <style type="text/css">
 body {
@@ -19,6 +18,11 @@ body {
 	font-weight: bolder;
 }
 </style>
+
+<script src="./plugin/jquery-1.9.1.min.js"></script>
+<link rel="Stylesheet" type="text/css" href="./plugin/wTooltip.css" />
+<script type="text/javascript" src="./plugin/wTooltip.js"></script>
+
 </head>
 <body>
 <div align="center">
@@ -26,7 +30,7 @@ body {
 <%for(int i = 0; i < 77; i++) {
 	out.print("&nbsp;");
 }%>
-<img src="images/speaker.png" width="97" height="97" alt="speaker"><br>
+<img src="images/speaker-rv.png" width="97" height="97" alt="speaker"><br>
 <span class="video_name">
 <%out.print(Video.selectedVideo);%></span><br /><br />
 <div id='mediaplayer'></div>
@@ -38,6 +42,19 @@ body {
    });
 </script><br />
 </div>
-&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="location='list.jsp'"><img src="images/back.png" width="37" height="37" alt="back"></button>
+&nbsp;&nbsp;&nbsp;&nbsp;<button id="back" type="button" onclick="location='list.jsp'"><img src="images/back.png" width="37" height="37" alt="back"></button>
+
+<script type="text/javascript">
+$('.mooTest').wTooltip();
+console.log($('.mooTest').wTooltip('opacity'));
+$('.mooTest :first').wTooltip('opacity', 0.2)
+console.log($('.mooTest').wTooltip('opacity'));
+
+$("#back").wTooltip({
+	title: "Back to List Page",
+	theme: "blue"
+});
+
+</script>
 </body>
 </html>

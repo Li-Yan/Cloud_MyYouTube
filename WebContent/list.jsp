@@ -25,6 +25,9 @@ body {
 	font-size: 17px;
 }
 </style>
+<script src="./plugin/jquery-1.9.1.min.js"></script>
+<link rel="Stylesheet" type="text/css" href="./plugin/wTooltip.css" />
+<script type="text/javascript" src="./plugin/wTooltip.js"></script>
 </head>
 <body>
 
@@ -60,7 +63,7 @@ function watch_video() {
 }
 </script> 
 
-<button type="button" onclick="watch_video()" ><img src="images/watch.png" width="37" height="37" alt="watch"></button><br><br>
+<button id="watch" type="button" onclick="watch_video()" ><img src="images/watch.png" width="37" height="37" alt="watch"></button><br><br>
 <img src="images/rate.png" width="13" height="13" alt="rate">
 <img src="images/rate.png" width="13" height="13" alt="rate">
 <img src="images/rate.png" width="13" height="13" alt="rate">
@@ -92,10 +95,35 @@ function update_rate() {
 }
 </script>
 
-<button type="button" onclick="update_rate()" ><img src="images/check.png" width="17" height="17" alt="check"></button><br />
+<button id="ratebutton" type="button" onclick="update_rate()" ><img src="images/check.png" width="17" height="17" alt="check"></button><br />
 </form>
 </div>
-&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="location='index.html'"><img src="images/back.png" width="37" height="37" alt="back"></button>
+&nbsp;&nbsp;&nbsp;&nbsp;<button id="back" type="button" onclick="location='index.html'"><img src="images/back.png" width="37" height="37" alt="back"></button>
+
+<script type="text/javascript">
+$('.mooTest').wTooltip();
+console.log($('.mooTest').wTooltip('opacity'));
+$('.mooTest :first').wTooltip('opacity', 0.2)
+console.log($('.mooTest').wTooltip('opacity'));
+
+$("#watch").wTooltip({
+	title: "Watch",
+	theme: "blue"
+});
+$("#rate").wTooltip({
+	title: "Choose a rate",
+	theme: "blue"
+});
+$("#ratebutton").wTooltip({
+	title: "Submit Rate",
+	theme: "blue"
+});
+$("#back").wTooltip({
+	title: "Back to Main Page",
+	theme: "blue"
+});
+
+</script>
 </body>
 
 </html>

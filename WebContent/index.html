@@ -9,6 +9,9 @@ body {
 	background-repeat: repeat;
 }
 </style>
+<script src="./plugin/jquery-1.9.1.min.js"></script>
+<link rel="Stylesheet" type="text/css" href="./plugin/wTooltip.css" />
+<script type="text/javascript" src="./plugin/wTooltip.js"></script>
 </head>
 
 <body>
@@ -17,10 +20,27 @@ body {
 </div><br /><br />
 
 <div align="center">
-<button name="upload" onclick="location='upload.jsp'"><img src="images/upload.png" alt="Logo" width="73" height="73" /></button>
+<button id="upload" name="upload" onclick="location='upload.jsp'"><img src="images/upload.png" alt="Logo" width="73" height="73" /></button>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button name="list" onclick="location='list.jsp'"><img src="images/list.png" alt="Logo" width="73" height="73" /></button>
+<button id="list" name="list" onclick="location='list.jsp'"><img src="images/list.png" alt="Logo" width="73" height="73" /></button>
 </div>
+
+<script type="text/javascript">
+$('.mooTest').wTooltip();
+console.log($('.mooTest').wTooltip('opacity'));
+$('.mooTest :first').wTooltip('opacity', 0.2)
+console.log($('.mooTest').wTooltip('opacity'));
+
+$("#upload").wTooltip({
+	title: "Upload",
+	theme: "blue"
+});
+
+$("#list").wTooltip({
+	title: "List",
+	theme: "blue"
+	});
+</script>
 
 </body>
 </html>
